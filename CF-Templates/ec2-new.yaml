@@ -1,0 +1,15 @@
+Resources:
+  MyProdEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0d0ad8bb301edb745
+      AvailabilityZone: ap-south-1a
+      # Specifies the name of the EC2 Key Pair to enable SSH access to the instance.
+      KeyName: gnani
+      InstanceType: t2.micro
+      SubnetId: subnet-07d2723572fcf8ce6
+Outputs:
+  EC2InstanceId:
+    Description: The ID of the EC2 instance created.
+    Value: "!Ref MyProdEC2Instance"
+

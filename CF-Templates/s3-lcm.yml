@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create S3 bucket with lifecycle management rule
+
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub my-lifecycle-bucket-${AWS::StackName}-${AWS::Region}
+      LifecycleConfiguration:
+        Rules:
+          - Id: ExpireOldObjects
+            Status: Enabled
+            Prefix: ''
+            ExpirationInDays: 1
+
+Outputs:
+  BucketName:
+    Description: S3 Bucket Name
+    Value: !Ref MyS3Bucket

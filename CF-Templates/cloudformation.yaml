@@ -1,0 +1,10 @@
+# Why we need a IaaC tool
+# Cloudformation primarily have 3 components:
+# 1. Resources: The AWS resources you want to create. (mandatory)
+# 2. Properties: The properties of the resources you want to create. (optional)
+# 3. Outputs: The outputs of the resources you want to create. (optional)
+
+
+Resources:
+  MyProdS3bucket:
+    Type: AWS::S3::Bucket
